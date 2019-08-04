@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class ServiceService {
+export class AppService {
 
   signup_customer_url = 'http://foodmaniafyp.herokuapp.com/customer';
 
@@ -25,5 +25,7 @@ export class SignupCustomerDetails{
     public password:String,
     public customer_address:String){}
 
-    
+
 }
+
+

@@ -1,15 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { AppService } from '../app.service';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
-import { ServiceService } from '../service.service';
-
-
 @Component({
   selector: 'app-customer',
   templateUrl: './customer.component.html',
   styleUrls: ['./customer.component.css']
 })
 export class CustomerComponent implements OnInit {
-
   abc: any;
   signupFormCustomer: FormGroup;
 
@@ -34,8 +31,8 @@ export class CustomerComponent implements OnInit {
   get customer_address() {
     return this.signupFormCustomer.get('customer_address');
   }
-  
-  constructor(private _service: ServiceService, private fb: FormBuilder) { }
+
+  constructor(private _appservice: AppService, private fb: FormBuilder) { }
 
   ngOnInit() {
 
@@ -58,7 +55,7 @@ export class CustomerComponent implements OnInit {
     console.log(this.signupFormCustomer.value);
     this.signupFormCustomer.controls.confirmPassword.disable();
     console.log(this.signupFormCustomer.value);
-    this._service.signupCustomer(this.signupFormCustomer.value)
+    this._appservice.signupCustomer(this.signupFormCustomer.value)
     .subscribe(
       response => console.log('success', response),
       error => console.log('error', error)
@@ -83,5 +80,4 @@ export class CustomerComponent implements OnInit {
         }
     };
 }
-
 }

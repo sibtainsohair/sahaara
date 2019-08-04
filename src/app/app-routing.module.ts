@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+
 import { CustomerComponent } from './customer/customer.component';
 import { ViewmenuComponent } from './viewmenu/viewmenu.component';
 import { PgnfComponent } from './pgnf/pgnf.component';
