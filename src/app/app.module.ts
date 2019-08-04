@@ -12,6 +12,8 @@ import { PgnfComponent } from './pgnf/pgnf.component';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { AppService } from './app.service';
+import { ChefComponent } from './chef/chef.component';
+import { OrderComponent } from './order/order.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { AppService } from './app.service';
     CustomerComponent,
     NavigationComponent,
     ViewmenuComponent,
-    PgnfComponent
+    PgnfComponent,
+    ChefComponent,
+    OrderComponent
   ],
   imports: [
     BrowserModule,

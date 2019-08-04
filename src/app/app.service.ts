@@ -7,6 +7,7 @@ import { HttpClient } from '@angular/common/http';
 export class AppService {
 
   signup_customer_url = 'http://foodmaniafyp.herokuapp.com/customer';
+  signup_chef_url = 'http://foodmaniafyp.herokuapp.com/chef';
 
   constructor(private http: HttpClient) { }
 
@@ -14,6 +15,9 @@ export class AppService {
     return this.http.post<any>(this.signup_customer_url, signupCustomerDetail);
   }
 
+  public signupChef(signupChefDetail) {
+    return this.http.post<any>(this.signup_chef_url, signupChefDetail);
+  }
 
 }
 export class SignupCustomerDetails{
@@ -21,6 +25,16 @@ export class SignupCustomerDetails{
     public customer_name:String,
     public customer_no:String,
     public customer_contact:String,
+    public email:String,
+    public password:String,
+    public customer_address:String){}
+
+
+}
+export class SignupChefDetails{
+  constructor(
+    public chef_name:String,
+    public chef_contact:String,
     public email:String,
     public password:String,
     public customer_address:String){}
