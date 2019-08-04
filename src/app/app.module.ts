@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { CustomerComponent } from './customer/customer.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { ViewmenuComponent } from './viewmenu/viewmenu.component';
+import { PgnfComponent } from './pgnf/pgnf.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CustomerComponent,
     NavigationComponent,
-    ViewmenuComponent
+    ViewmenuComponent,
+    PgnfComponent
   ],
   imports: [
     BrowserModule,
