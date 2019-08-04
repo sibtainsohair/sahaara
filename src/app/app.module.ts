@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { CommonModule} from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -7,6 +9,8 @@ import { CustomerComponent } from './customer/customer.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { ViewmenuComponent } from './viewmenu/viewmenu.component';
 import { PgnfComponent } from './pgnf/pgnf.component';
+import { HttpClient } from 'selenium-webdriver/http';
+import { ServiceService } from './service.service';
 
 @NgModule({
   declarations: [
@@ -18,9 +22,15 @@ import { PgnfComponent } from './pgnf/pgnf.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CommonModule,
+    HttpClient,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    ServiceService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
