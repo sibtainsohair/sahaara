@@ -6,6 +6,8 @@ import { ViewmenuComponent } from './viewmenu/viewmenu.component';
 import { PgnfComponent } from './pgnf/pgnf.component';
 import { ChefComponent } from './chef/chef.component';
 import { OrderComponent } from './order/order.component';
+import { LogincustomerComponent } from './logincustomer/logincustomer.component';
+import { LoginchefComponent } from './loginchef/loginchef.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/viewmenu', pathMatch:'full'},
@@ -13,6 +15,8 @@ const routes: Routes = [
   {path: 'viewmenu', component: ViewmenuComponent},
   {path: 'chef', component: ChefComponent},
   {path: 'order', component: OrderComponent},
+  {path: 'logincustomer', component: LogincustomerComponent},
+  {path: 'loginchef', component: LoginchefComponent}, 
   {path: '**', component: PgnfComponent}
 ];
 

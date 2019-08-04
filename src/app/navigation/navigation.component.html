@@ -7,7 +7,7 @@
       </div>
       <nav class="navbar navbar-dark bg-dark">
         <button routerLink = "/viewmenu" class="btn btn-outline-success" type="button">VIEW MENU</button>
-        <button class="btn btn-outline-success" type="button">ORDER</button>
+        <button routerLink = "/order" class="btn btn-outline-success" type="button">ORDER</button>
         <button class="btn btn-outline-success" type="button">Add Menu</button>
         <button class="btn btn-outline-success" type="button">Add Shop</button>
         <button class="btn btn-outline-success" type="button">ADD SHOP</button>
@@ -18,9 +18,9 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <a routerLink = "/customer" class="dropdown-item" href="#">customer signup</a>
-            <a class="dropdown-item" href="#">customer signin</a>
-            <a class="dropdown-item" href="#">chef signup</a>
-            <a class="dropdown-item" href="#">chef signin</a>
+            <a routerLink = "/logincustomer" class="dropdown-item" href="#">customer signin</a>
+            <a routerLink = "/chef" class="dropdown-item" href="#">chef signup</a>
+            <a routerLink = "/loginchef" class="dropdown-item" href="#">chef signin</a>
           </div>
         </li>
       </nav>

@@ -8,6 +8,7 @@ export class AppService {
 
   signup_customer_url = 'http://foodmaniafyp.herokuapp.com/customer';
   signup_chef_url = 'http://foodmaniafyp.herokuapp.com/chef';
+  login_chef_url = 'http://foodmaniafyp.herokuapp.com/chefs/login'
 
   constructor(private http: HttpClient) { }
 
@@ -19,6 +20,9 @@ export class AppService {
     return this.http.post<any>(this.signup_chef_url, signupChefDetail);
   }
 
+  public loginChef(loginChefDetail) {
+    return this.http.post<any>(this.login_chef_url, loginChefDetail);
+  }
 }
 export class SignupCustomerDetails{
   constructor(
