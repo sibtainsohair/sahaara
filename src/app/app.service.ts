@@ -6,11 +6,11 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AppService {
 
-  signup_customer_url = 'http://customerfyp.herokuapp.com/customer';
-  signup_chef_url = 'http://foodmaniafyp.herokuapp.com/chef';
-  login_chef_url = 'http://foodmaniafyp.herokuapp.com/chefs/login'
-  login_customer_url = 'http://customerfyp.herokuapp.com/customer/login'
-  add_menu_url = "http://foodmaniafyp.herokuapp.com/menu";
+  signup_customer_url = 'https://customerfyp.herokuapp.com/customer';
+  signup_chef_url = 'https://foodmaniafyp.herokuapp.com/chef';
+  login_chef_url = 'https://foodmaniafyp.herokuapp.com/chefs/login'
+  login_customer_url = 'https://customerfyp.herokuapp.com/customer/login'
+  add_menu_url = "https://foodmaniafyp.herokuapp.com/menu";
 
   constructor(private http: HttpClient) { }
 
@@ -25,14 +25,14 @@ export class AppService {
   public loginChef(loginChefDetail) {
     return this.http.post<any>(this.login_chef_url, loginChefDetail);
   }
-  
+
   public loginCustomer(loginCustomerDetail) {
     return this.http.post<any>(this.login_customer_url, loginCustomerDetail);
   }
 
   public addMenu(addMenuDetail) {
     return this.http.post<any>(this.add_menu_url, addMenuDetail);
-  } 
+  }
 }
 export class SignupCustomerDetails{
   constructor(
