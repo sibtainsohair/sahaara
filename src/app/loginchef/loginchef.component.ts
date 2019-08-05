@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class LoginchefComponent implements OnInit {
 
   loginFormChef: FormGroup;
-  
+
 get email() {
   return this.loginFormChef.get('email');
 }
@@ -26,35 +26,33 @@ ngOnInit() {
   this.loginFormChef = this.fb.group({
     email: ['', [Validators.required, Validators.email]],
     password: ['', [Validators.required, Validators.minLength(8)]],
- 
+
   });
 
 }
 
 onSubmit() {
   console.log(this.loginFormChef.value);
-  
+
   this._appservice.loginChef(this.loginFormChef.value)
   .subscribe(
     response => {
-      localStorage.setItem('chefname', response.chef_name)
-      localStorage.setItem('chefid',response.chef_id)
-      if(localStorage.getItem('chefid')!=null)
-      {
-        localStorage.setItem('loginstatus','true')
-          localStorage.setItem('logintype','chef')
-        this.router.navigate([''])
+      localStorage.setItem('chefname', response.chef_name);
+      localStorage.setItem('chefid', response.chef_id);
+      if (localStorage.getItem('chefid') != null) {
+        localStorage.setItem('loginstatus', 'true');
+        localStorage.setItem('logintype', 'chef');
+        this.router.navigate(['viewmenu']);
       }
-    
     },
     error => console.log('error', error)
-    
+
   );
 }
 
 
 
       // set error on matchingControl if validation fails
-     
-  
+
+
 }
