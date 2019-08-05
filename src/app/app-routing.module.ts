@@ -15,7 +15,6 @@ import { AppComponent } from './app.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/viewmenu', pathMatch:'full'},
-  {path: '', component: AppComponent},
   {path: 'viewmenu', component: ViewmenuComponent},
   {path: 'signup', component: SignupiewsComponent},
   {path: 'ordeur', component: OrderComponent},

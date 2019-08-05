@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AppService } from '../app.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-loginchef',
@@ -19,7 +19,10 @@ get password() {
   return this.loginFormChef.get('password');
 }
 
-constructor(private _appservice: AppService, private fb: FormBuilder,private router:Router) { }
+constructor(
+  private _appservice: AppService, 
+  private fb: FormBuilder,
+  private router:Router) {}
 
 ngOnInit() {
 
@@ -43,7 +46,7 @@ onSubmit() {
       {
         localStorage.setItem('loginstatus','true')
           localStorage.setItem('logintype','chef')
-        this.router.navigate([''])
+        this.router.navigate(['viewmenu'])
       }
     
     },
