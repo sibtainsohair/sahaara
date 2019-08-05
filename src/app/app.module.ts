@@ -16,6 +16,7 @@ import { ChefComponent } from './chef/chef.component';
 import { OrderComponent } from './order/order.component';
 import { LogincustomerComponent } from './logincustomer/logincustomer.component';
 import { LoginchefComponent } from './loginchef/loginchef.component';
+import { AddmenuComponent } from './addmenu/addmenu.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { LoginchefComponent } from './loginchef/loginchef.component';
     ChefComponent,
     OrderComponent,
     LogincustomerComponent,
-    LoginchefComponent
+    LoginchefComponent,
+    AddmenuComponent
   ],
   imports: [
     BrowserModule,

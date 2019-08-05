@@ -1,0 +1,23 @@
+<div id= "container" class="container-fluid">
+    <p><b>Add Shop</b></p>
+
+   <form [formGroup]="menuForm" (ngSubmit)="onSubmit()">
+
+
+
+     <br>
+     <input [class.is-invalid]="shop_name.invalid && shop_name.touched"
+     name="shop_name" formControlName="shop_name" type="text" class="form-control" placeholder="Name"/>
+     <div *ngIf="shop_name.invalid && shop_name.touched">
+       <small *ngIf="shop_name.errors?.required" class="text-danger">Name is required</small>
+       <small *ngIf="shop_name.errors?.minlength" class="text-danger">Name must be atleast 3 characters</small>
+     </div>
+
+     <br *ngIf="!shop_name.invalid || !shop_name.touched">
+
+
+
+     <a><input name="signup" type="submit" id="CreateAccount_btn" value="SignUp"/> </a>
+   </form>
+
+ </div>

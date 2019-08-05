@@ -1,3 +1,8 @@
 <app-navigation></app-navigation>
-
+<div *ngIf = "loginstatus">
+    <app-order></app-order>
+</div>
+<div *ngIf =  "!loginstatus"  >
+    <app-viewmenu></app-viewmenu>
+</div>
 <router-outlet></router-outlet>
