@@ -17,6 +17,10 @@ import { OrderComponent } from './order/order.component';
 import { LogincustomerComponent } from './logincustomer/logincustomer.component';
 import { LoginchefComponent } from './loginchef/loginchef.component';
 import { AddmenuComponent } from './addmenu/addmenu.component';
+import { PublicviewComponent } from './publicview/publicview.component';
+import { PrivateviewComponent } from './privateview/privateview.component';
+import { LoginviewsComponent } from './loginviews/loginviews.component';
+import { SignupiewsComponent } from './signupiews/signupiews.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +33,11 @@ import { AddmenuComponent } from './addmenu/addmenu.component';
     OrderComponent,
     LogincustomerComponent,
     LoginchefComponent,
-    AddmenuComponent
+    AddmenuComponent,
+    PublicviewComponent,
+    PrivateviewComponent,
+    LoginviewsComponent,
+    SignupiewsComponent
   ],
   imports: [
     BrowserModule,

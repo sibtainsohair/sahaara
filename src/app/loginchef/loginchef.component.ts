@@ -43,7 +43,7 @@ onSubmit() {
       {
         localStorage.setItem('loginstatus','true')
           localStorage.setItem('logintype','chef')
-        this.router.navigate(['viewmenu'])
+        this.router.navigate([''])
       }
     
     },

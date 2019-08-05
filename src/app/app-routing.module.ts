@@ -9,15 +9,17 @@ import { OrderComponent } from './order/order.component';
 import { LogincustomerComponent } from './logincustomer/logincustomer.component';
 import { LoginchefComponent } from './loginchef/loginchef.component';
 import { AddmenuComponent } from './addmenu/addmenu.component';
+import { LoginviewsComponent } from './loginviews/loginviews.component';
+import { SignupiewsComponent } from './signupiews/signupiews.component';
+import { AppComponent } from './app.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/viewmenu', pathMatch:'full'},
-  {path: 'customer', component: CustomerComponent},
+  {path: '', component: AppComponent},
   {path: 'viewmenu', component: ViewmenuComponent},
-  {path: 'chef', component: ChefComponent},
-  {path: 'order', component: OrderComponent},
-  {path: 'logincustomer', component: LogincustomerComponent},
-  {path: 'loginchef', component: LoginchefComponent},
+  {path: 'signup', component: SignupiewsComponent},
+  {path: 'ordeur', component: OrderComponent},
+  {path: 'login', component: LoginviewsComponent},
   {path: 'addmenu', component: AddmenuComponent}, 
   {path: '**', component: PgnfComponent}
 ];
