@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from '../app.service';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-customer',
   templateUrl: './customer.component.html',
@@ -32,7 +33,7 @@ export class CustomerComponent implements OnInit {
     return this.signupFormCustomer.get('customer_address');
   }
 
-  constructor(private _appservice: AppService, private fb: FormBuilder) { }
+  constructor(private _appservice: AppService, private fb: FormBuilder, private router: Router) { }
 
   ngOnInit() {
 
@@ -57,7 +58,11 @@ export class CustomerComponent implements OnInit {
     console.log(this.signupFormCustomer.value);
     this._appservice.signupCustomer(this.signupFormCustomer.value)
     .subscribe(
-      response => console.log('success', response),
+      response =>  {
+        if (response.success !== '') {
+          this.router.navigate(['logincustomer']);
+        }
+      },
       error => console.log('error', error)
     );
   }

@@ -6,8 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./viewmenu.component.css']
 })
 export class ViewmenuComponent implements OnInit {
- 
-  abc = localStorage.getItem('logintype')
+
   constructor() { }
 
   ngOnInit() {

@@ -1,3 +1,4 @@
+
 <div style="text-align:center">
     <div class="pos-f-t">
       <div class="collapse" id="navbarToggleExternalContent">
@@ -6,21 +7,21 @@
         </div>
       </div>
       <nav class="navbar navbar-dark bg-dark">
-        <button routerLink = "/viewmenu" class="btn btn-outline-success" type="button">VIEW MENU</button>
-        <button routerLink = "/order" class="btn btn-outline-success" type="button">ORDER</button>
-        <button routerLink = "/addmenu" class="btn btn-outline-success" type="button">Add Menu</button>
-        <button class="btn btn-outline-success" type="button">Add Shop</button>
-        <button class="btn btn-outline-success" type="button">ADD SHOP</button>
+        <button routerLink = "/viewmenu" class="btn btn-outline-success" routerLinkActive="active">Home</button>
+        <button class="btn btn-outline-success" type="button" routerLinkActive="active" >ORDER</button>
+        <button class="btn btn-outline-success" type="button" routerLink="/addmenu" routerLinkActive="active" >Add Menu</button>
+        <button class="btn btn-outline-success" type="button" routerLink="/addmenu" routerLinkActive="active" >Add Shop</button>
+        <button class="btn btn-outline-success" type="button" routerLink="/viewmenu"routerLinkActive="active">View Menu</button>
 
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             sigin to order
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a routerLink = "/customer" class="dropdown-item" href="#">customer signup</a>
-            <a routerLink = "/logincustomer" class="dropdown-item" href="#">customer signin</a>
-            <a routerLink = "/chef" class="dropdown-item" href="#">chef signup</a>
-            <a routerLink = "/loginchef" class="dropdown-item" href="#">chef signin</a>
+            <a routerLink = "/customer" class="dropdown-item" href="customer">customer signup</a>
+            <a class="dropdown-item" routerLink="/logincustomer">customer signin</a>
+            <a class="dropdown-item" routerLink="/chef">chef signup</a>
+            <a class="dropdown-item" routerLink="/loginchef">chef signin</a>
           </div>
         </li>
       </nav>

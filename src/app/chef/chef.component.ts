@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AppService } from '../app.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-chef',
@@ -31,7 +32,7 @@ get chef_address() {
   return this.signupFormChef.get('chef_address');
 }
 
-constructor(private _appservice: AppService, private fb: FormBuilder) { }
+constructor(private _appservice: AppService, private fb: FormBuilder,private router: Router) { }
 
 ngOnInit() {
 
@@ -56,7 +57,11 @@ onSubmit() {
   console.log(this.signupFormChef.value);
   this._appservice.signupChef(this.signupFormChef.value)
   .subscribe(
-    response => console.log('success', response),
+    response => {
+      if (response.success !== '') {
+        this.router.navigate(['loginchef']);
+      }
+    },
     error => console.log('error', error)
   );
 }
