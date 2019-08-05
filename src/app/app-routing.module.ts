@@ -9,10 +9,11 @@ import { OrderComponent } from './order/order.component';
 import { LogincustomerComponent } from './logincustomer/logincustomer.component';
 import { LoginchefComponent } from './loginchef/loginchef.component';
 import { AddmenuComponent } from './addmenu/addmenu.component';
+import { ViewchefComponent } from './viewchef/viewchef.component';
 
 
 const routes: Routes = [
-  {path: '', redirectTo: '/viewmenu', pathMatch:'full'},
+  {path: '', redirectTo: '/viewchef', pathMatch:'full'},
   {path: 'viewmenu', component: ViewmenuComponent},
   {path: 'customer', component: CustomerComponent},
     {path: 'chef', component: ChefComponent},
@@ -20,6 +21,7 @@ const routes: Routes = [
   {path: 'loginchef', component: LoginchefComponent},
   {path: 'logincustomer', component: LogincustomerComponent},
   {path: 'addmenu', component: AddmenuComponent},
+  {path: 'viewchef', component: ViewchefComponent},
   {path: '**', component: PgnfComponent}
 ];
 

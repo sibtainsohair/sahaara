@@ -38,7 +38,7 @@ get password() {
         if (localStorage.getItem('customerid') != null) {
           localStorage.setItem('loginstatus', 'true');
           localStorage.setItem('logintype', 'customer');
-          this.router.navigate(['viewmenu']);
+          this.router.navigate(['viewchef']);
 
         }
 

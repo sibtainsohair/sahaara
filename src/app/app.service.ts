@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { IMenu } from './menu';
+import { Observable } from 'rxjs';
+import { IChef } from './chef';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +14,9 @@ export class AppService {
   login_chef_url = 'https://foodmaniafyp.herokuapp.com/chefs/login'
   login_customer_url = 'https://customerfyp.herokuapp.com/customer/login'
   add_menu_url = "https://foodmaniafyp.herokuapp.com/menu";
-
+  get_menu_url = "https://foodmaniafyp.herokuapp.com/menus";
+  get_chef_url =  "https://foodmaniafyp.herokuapp.com/chefs";
+  
   constructor(private http: HttpClient) { }
 
   public signupCustomer(signupCustomerDetail) {
@@ -32,6 +37,12 @@ export class AppService {
 
   public addMenu(addMenuDetail) {
     return this.http.post<any>(this.add_menu_url, addMenuDetail);
+  }
+  public getMenu(): Observable<IMenu[]> {
+    return this.http.get<IMenu[]>(this.get_menu_url);
+  }
+  public getChefs(): Observable<IChef[]> {
+    return this.http.get<IChef[]>(this.get_chef_url);
   }
 }
 export class SignupCustomerDetails{

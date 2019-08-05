@@ -7,13 +7,12 @@
         </div>
       </div>
       <nav class="navbar navbar-dark bg-dark">
-        <button routerLink = "/viewmenu" class="btn btn-outline-success" routerLinkActive="active">Home</button>
-        <button class="btn btn-outline-success" type="button" routerLinkActive="active" >ORDER</button>
-        <button class="btn btn-outline-success" type="button" routerLink="/addmenu" routerLinkActive="active" >Add Menu</button>
-        <button class="btn btn-outline-success" type="button" routerLink="/addmenu" routerLinkActive="active" >Add Shop</button>
-        <button class="btn btn-outline-success" type="button" routerLink="/viewmenu"routerLinkActive="active">View Menu</button>
+        <button class="btn btn-outline-success" type="button" routerLink="/viewmenu" routerLinkActive="active" >View Shops</button>
+        <button class="btn btn-outline-success" type="button" routerLink="/viewchef"routerLinkActive="active">View Chefs</button>
+        <button *ngIf = "logintypechef" class="btn btn-outline-success" type="button" routerLink="/addmenu" routerLinkActive="active" >Add Shop</button>
 
-        <li class="nav-item dropdown">
+        <div *ngIf="!loginstatus">
+        <li class="nav-item dropdown" >
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             sigin to order
           </a>
@@ -23,7 +22,10 @@
             <a class="dropdown-item" routerLink="/chef">chef signup</a>
             <a class="dropdown-item" routerLink="/loginchef">chef signin</a>
           </div>
-        </li>
+        </li></div>
+        <div *ngIf="loginstatus">
+        <a (click)="onSubmit()" class="btn btn-outline-success">Logout </a>
+        </div>
       </nav>
     </div>
   </div>

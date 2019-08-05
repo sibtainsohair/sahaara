@@ -17,6 +17,9 @@ import { OrderComponent } from './order/order.component';
 import { LogincustomerComponent } from './logincustomer/logincustomer.component';
 import { LoginchefComponent } from './loginchef/loginchef.component';
 import { AddmenuComponent } from './addmenu/addmenu.component';
+import { ViewchefComponent } from './viewchef/viewchef.component';
+import { UpdatechefComponent } from './updatechef/updatechef.component';
+import { UpdatecustomerComponent } from './updatecustomer/updatecustomer.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +33,9 @@ import { AddmenuComponent } from './addmenu/addmenu.component';
     LogincustomerComponent,
     LoginchefComponent,
     AddmenuComponent,
+    ViewchefComponent,
+    UpdatechefComponent,
+    UpdatecustomerComponent,
   ],
   imports: [
     BrowserModule,
