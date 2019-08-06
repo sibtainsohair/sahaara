@@ -12,11 +12,10 @@ export class AddmenuComponent implements OnInit {
 
   chefid = localStorage.getItem('chefid',);
   menuForm: FormGroup;
-  
+
 get shop_name() {
   return this.menuForm.get('shop_name');
 }
-
 
 constructor(private _appservice: AppService, private fb: FormBuilder,private router:Router) { }
 
@@ -24,18 +23,21 @@ ngOnInit() {
 
   this.menuForm = this.fb.group({
     shop_name: ['', [Validators.required, Validators.email]],
-    chef_id: [this.chefid ],
- 
+    chef_id: [this.chefid]
   });
 
 }
 
 onSubmit() {
   console.log(this.menuForm.value);
-  
+
   this._appservice.addMenu(this.menuForm.value)
   .subscribe(
-    response => console.log('success', response),
+    response => {
+      if (response.success !== '') {
+        this.router.navigate(['addmenu']);
+      }
+    },
     error => console.log('error', error)
   );
 }
@@ -43,6 +45,6 @@ onSubmit() {
 
 
       // set error on matchingControl if validation fails
-     
-  
+
+
 }
