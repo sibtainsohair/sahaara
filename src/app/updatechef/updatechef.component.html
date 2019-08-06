@@ -1,1 +1,69 @@
-<p>updatechef works!</p>
+<div id= "container" class="container-fluid">
+    <p><b>Update Account</b></p>
+
+   <form [formGroup]="updateFormChef" (ngSubmit)="onSubmit()">
+
+
+
+     <br>
+     <input [class.is-invalid]="chef_name.invalid && chef_name.touched"
+     name="chef_name" formControlName="chef_name" type="text" class="form-control" placeholder="Name"/>
+     <div *ngIf="chef_name.invalid && chef_name.touched">
+       <small *ngIf="chef_name.errors?.required" class="text-danger">Name is required</small>
+       <small *ngIf="chef_name.errors?.minlength" class="text-danger">Name must be atleast 3 characters</small>
+     </div>
+
+     <br *ngIf="!chef_name.invalid || !chef_name.touched">
+
+
+     <input [class.is-invalid]="chef_contact.invalid && chef_contact.touched"
+     name="chef_contact" formControlName="chef_contact" type="text" class="form-control" placeholder="Mobile No"/>
+     <div *ngIf="chef_contact.invalid && chef_contact.touched">
+       <small *ngIf="chef_contact.errors?.required" class="text-danger">Mobile no is required</small>
+       <small *ngIf="chef_contact.errors?.minlength" class="text-danger">Mobile no must be atleast 11 digits</small>
+     </div>
+
+     <br *ngIf="!chef_contact.invalid || !chef_contact.touched">
+
+
+     <input [class.is-invalid]="email.invalid && email.touched"
+     name="email" formControlName="email" type="email" class="form-control" placeholder="Email"/>
+     <div *ngIf="email.invalid && email.touched">
+       <small *ngIf="email.errors?.required" class="text-danger">Email is required</small>
+       <small *ngIf="email.errors?.email" class="text-danger">Please enter a valid Email</small>
+     </div>
+
+     <br *ngIf="!email.invalid || !email.touched">
+
+
+     <input [class.is-invalid]="password.invalid && password.touched"
+     name="password" formControlName="password" type="password" class="form-control" placeholder="Password"/>
+     <div *ngIf="password.invalid && password.touched">
+       <small *ngIf="password.errors?.required" class="text-danger">Password is required</small>
+       <small *ngIf="password.errors?.minlength" class="text-danger">Password must be atleast 8 characters</small>
+     </div>
+
+     <br *ngIf="!password.invalid || !password.touched">
+     <input [class.is-invalid]="confirmPassword.invalid && confirmPassword.touched"
+     name="confirmPassword" formControlName="confirmPassword" type="password" class="form-control" placeholder="Confirm Password"/>
+     <div *ngIf="confirmPassword.invalid && confirmPassword.touched">
+       <small *ngIf="confirmPassword.errors?.required" class="text-danger">Confirm password is required</small>
+       <small *ngIf="confirmPassword.errors?.mustMatch" class="text-danger">Passwords do not match</small>
+     </div>
+
+     <br *ngIf="!confirmPassword.invalid || !confirmPassword.touched">
+
+     <input [class.is-invalid]="chef_address.invalid && chef_address.touched"
+     name="chef_address" formControlName="chef_address" type="text" class="form-control" placeholder="Address"/>
+     <div *ngIf="chef_address.invalid && chef_address.touched">
+       <small *ngIf="chef_address.errors?.required" class="text-danger">Address is required</small>
+       <small *ngIf="chef_address.errors?.minlength" class="text-danger">Enter a valid Address</small>
+     </div>
+
+     <br *ngIf="!chef_address.invalid || !chef_address.touched">
+
+
+     <a><input name="signup" type="submit" id="CreateAccount_btn" value="SignUp"/> </a>
+   </form>
+
+ </div>
